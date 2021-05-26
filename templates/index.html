@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <title>Diabetic Check</title>
+
+    <style>
+        #marquee{
+            background-color: black;
+            height: 40px;
+            text-align: center;
+        }
+        #marquee p{
+            text-align: center;
+            font-weight: bold;
+            
+        }
+        body 
+        {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        form{
+            position:static;
+        }
+        
+        #sub:hover {
+            background-color: lawngreen;
+        }
+        .form-input {
+            border-radius: 14px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            width: 50%;
+        }
+        #first
+        {
+            margin-top: 10px;
+        }
+        
+        #sub
+        {
+            border-radius: 14px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            width: 25%;
+        }
+        
+        /* Footer */
+
+        .footer{
+            background-color: #E9E9E9;
+            color: #000000;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .contact-icon{
+            color: #000000;
+            padding: 7px;
+        }
+
+        .contact-icon:hover{
+            color: #a6a19a;
+        }
+        .footer-description{
+            margin: 0;
+            font-size: 12px;
+            font-weight: 100;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div style="color:yellow">
+        <div id="marquee">
+            <marquee width="100%" direction="right" height="40px">
+                <p> ********* WELCOME TO DIABETIC CARE WEBSITE **********</p>
+            </marquee>
+        </div>
+            
+        <form action="{{ url_for('predict') }}" method="post">
+            
+            <input class="form-input" type="text" id="first" name="pregnancies" placeholder="Number of Pregnancies eg. 1"><br>
+            <br>
+            <br>
+            <input class="form-input" type="text" name="glucose" placeholder="Glucose (mg/dL) eg. 90"><br>
+            <br>
+            <br>
+            <input class="form-input" type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 86"><br>
+            <br>
+            <br>
+            <input class="form-input" type="text" name="skinthickness" placeholder="Skin Thickness (mm) eg. 20"><br>
+            <br>
+            <br>
+            <input class="form-input" type="text" name="insulin" placeholder="Insulin Level (IU/mL) eg. 70"><br>
+            <br>
+            <br>
+            <input class="form-input" type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 33.1"><br>
+            <br>
+            <br>
+            <input class="form-input" type="text" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.52"><br>
+            <br>
+            <br>
+            <input class="form-input" type="text" name="age" placeholder="Age (years) eg. 37"><br>
+
+            <br><br>
+            <button id="sub" type="submit ">Click Me!!</button>
+            <br>
+        </form>
+
+        <br><br>
+        <h3>{{ prediction_text }}<h3>
+
+        <div class='footer'>
+                <div class="contact">
+                    <a target="_blank" href="https://github.com/DhirajGupta141"><i class="fab fa-github fa-lg contact-icon"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/dhirajgupta141"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+                </div>
+                <p class='footer-description'>Made with ❤️ by Dhiraj Gupta.</p>
+        </div>
+    </div>
+
+</body>
+</html>
