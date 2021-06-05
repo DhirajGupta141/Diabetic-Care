@@ -1,3 +1,4 @@
 # Diabetic-Care
 
 Live Demo:https://diabeticare.herokuapp.com/
+Live Demo:https://diabetes-prediction3.herokuapp.com/predict
